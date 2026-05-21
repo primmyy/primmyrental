@@ -340,9 +340,13 @@ function parseCSV(text) {
 }
 
 async function fetchAllData() {
-  const res = await fetch(API_URL);
-  if (!res.ok) throw new Error("API error");
-  return await res.json();
+  const res = await fetch(API_URL, {
+    redirect: 'follow',
+    method: 'GET',
+  });
+  if (!res.ok) throw new Error("API error " + res.status);
+  const text = await res.text();
+  return JSON.parse(text);
 }
 
 async function loadAll() {
@@ -444,7 +448,8 @@ async function loadAll() {
     document.getElementById("lastUpdate").textContent = new Date().toLocaleDateString("th-TH", {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
 
   } catch(e) {
-    document.getElementById("mainContent").innerHTML = `<div class="no-result"><div class="no-result-icon">⚠️</div><div class="no-result-text">โหลดข้อมูลไม่ได้ กรุณาลองใหม่</div></div>`;
+    console.error("loadAll error:", e);
+    document.getElementById("mainContent").innerHTML = `<div class="no-result"><div class="no-result-icon">⚠️</div><div class="no-result-text">โหลดข้อมูลไม่ได้: ${e.message}</div></div>`;
   }
 }
 

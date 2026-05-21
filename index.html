@@ -472,6 +472,7 @@ function buildMonthTabs() {
     tabs.querySelectorAll(".month-tab").forEach(b => b.classList.remove("active"));
     e.target.classList.add("active");
     activeMonth = e.target.dataset.month === "all" ? "all" : parseInt(e.target.dataset.month);
+    buildDateFilter();
     render();
   });
 }
@@ -586,6 +587,7 @@ let activeDateFilter = 'all';
 function buildDateFilter() {
   const wrap = document.getElementById('dateFilter');
   if (!wrap) return;
+  activeDateFilter = 'all'; // reset ทุกครั้ง
   const dates = [...new Set(
     allData
       .filter(e => activeMonth === 'all' || e.month === activeMonth)
@@ -599,7 +601,6 @@ function buildDateFilter() {
     html += '<button class="date-chip" data-date="' + d + '" onclick="filterDate(this)">' + day + ' ' + MONTHS[mon] + '</button>';
   });
   wrap.innerHTML = html;
-  activeDateFilter = 'all';
 }
 
 function filterDate(el) {

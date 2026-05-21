@@ -326,10 +326,10 @@ function switchPage(id, el) {
   if (el) el.classList.add('active');
 }
 
-function filterDate(date, el) {
+function filterDate(el) {
   document.querySelectorAll('#dateFilter .date-chip').forEach(b => b.classList.remove('active'));
   if (el) el.classList.add('active');
-  activeDateFilter = date;
+  activeDateFilter = el ? el.dataset.date : 'all';
   render();
 }
 
@@ -625,19 +625,21 @@ function buildDateFilter() {
       .filter(e => activeMonth === 'all' || e.month === activeMonth)
       .map(e => e.dateStr)
   )].sort();
-  wrap.innerHTML = '<button class="date-chip active" data-date="all" onclick="filterDate(\'all\',this)">ทั้งหมด</button>' +
-    dates.map(d => {
-      const [day, mon] = d.split('/');
-      const mth = ['','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'][parseInt(mon)];
-      return `<button class="date-chip" data-date="${d}" onclick="filterDate('${d}',this)">${day} ${mth}</button>`;
-    }).join('');
+  const MONTHS = ['','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+  let html = '<button class="date-chip active" data-date="all" onclick="filterDate(this)">ทั้งหมด</button>';
+  dates.forEach(d => {
+    const parts = d.split('/');
+    const day = parts[0], mon = parseInt(parts[1]);
+    html += '<button class="date-chip" data-date="' + d + '" onclick="filterDate(this)">' + day + ' ' + MONTHS[mon] + '</button>';
+  });
+  wrap.innerHTML = html;
   activeDateFilter = 'all';
 }
 
-function filterDate(date, el) {
+function filterDate(el) {
   document.querySelectorAll('#dateFilter .date-chip').forEach(b => b.classList.remove('active'));
   if (el) el.classList.add('active');
-  activeDateFilter = date;
+  activeDateFilter = el ? el.dataset.date : 'all';
   render();
 }
 

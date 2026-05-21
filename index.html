@@ -18,11 +18,11 @@
   header { position:relative; z-index:1; padding:22px 20px 14px; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
   .logo { font-family:'Prompt',sans-serif; font-weight:900; font-size:22px; letter-spacing:-0.5px; }
   .logo span { color:var(--accent); }
-  .header-tag { font-size:13px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; }
+  .header-tag { font-size:11px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; }
   .update-label { font-size:10px; color:var(--muted); letter-spacing:1px; }
   .update-time { font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; }
 
-  .ticker-wrap { background:linear-gradient(90deg,#ff4d8d,#ff85b3,#ff4d8d); overflow:hidden; white-space:nowrap; padding:7px 0; position:relative; z-index:1; }
+  .ticker-wrap { background:var(--accent); overflow:hidden; white-space:nowrap; padding:7px 0; position:relative; z-index:1; }
   .ticker-inner { display:inline-block; animation:ticker 24s linear infinite; font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; letter-spacing:1px; color:#fff; }
   @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
@@ -34,16 +34,16 @@
   .stat-label { font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-top:3px; }
 
   .filter-wrap { position:sticky; top:0; z-index:5; background:rgba(10,10,10,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); padding:10px 16px; }
-  .filter-label { font-size:12px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+  .filter-label { font-size:10px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
   .month-tabs { display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
   .month-tabs::-webkit-scrollbar { display:none; }
-  .month-tab { flex-shrink:0; font-family:'Prompt',sans-serif; font-weight:600; font-size:13px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+  .month-tab { flex-shrink:0; font-family:'Prompt',sans-serif; font-weight:600; font-size:12px; padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
   .month-tab.active { background:var(--accent); color:#fff; border-color:var(--accent); }
   .month-tab:hover:not(.active) { border-color:#444; color:var(--white); }
 
   .device-filter-wrap { padding:8px 16px 10px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); position:sticky; top:57px; z-index:4; backdrop-filter:blur(12px); }
   .device-filter-wrap::-webkit-scrollbar { display:none; }
-  .device-chip { flex-shrink:0; font-size:13px; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; }
+  .device-chip { flex-shrink:0; font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; }
   .device-chip.active { background:#1a1a1a; color:var(--white); border-color:#444; }
 
   /* LOADING */
@@ -53,7 +53,7 @@
   .loading-text { font-family:'Prompt',sans-serif; font-size:13px; color:var(--muted); }
 
   main { position:relative; z-index:1; padding:20px 16px 100px; max-width:480px; margin:0 auto; }
-  .month-header { font-family:'Prompt',sans-serif; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; margin-top:8px; display:flex; align-items:center; gap:8px; }
+  .month-header { font-family:'Prompt',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; margin-top:8px; display:flex; align-items:center; gap:8px; }
   .month-header::after { content:''; flex:1; height:1px; background:var(--border); }
 
   .day-card { background:var(--card-bg); border:1px solid var(--border); border-radius:16px; margin-bottom:16px; overflow:hidden; opacity:0; transform:translateY(16px); animation:fadeUp 0.4s ease forwards; transition:border-color 0.2s; }
@@ -63,12 +63,12 @@
   .date-strip { padding:12px 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
   .date-left { display:flex; align-items:center; gap:10px; }
   .date-box { background:#1e1e1e; border-radius:8px; padding:4px 8px; text-align:center; min-width:40px; }
-  .date-day-num { font-family:'Prompt',sans-serif; font-weight:800; font-size:22px; line-height:1; }
-  .date-month-short { font-size:11px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
-  .date-main { font-family:'Prompt',sans-serif; font-weight:700; font-size:16px; line-height:1.2; }
-  .date-sub { font-size:12px; color:var(--muted); letter-spacing:0.5px; margin-top:2px; }
+  .date-day-num { font-family:'Prompt',sans-serif; font-weight:800; font-size:18px; line-height:1; }
+  .date-month-short { font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .date-main { font-family:'Prompt',sans-serif; font-weight:700; font-size:14px; line-height:1.2; }
+  .date-sub { font-size:10px; color:var(--muted); letter-spacing:0.5px; margin-top:2px; }
 
-  .slots-badge { font-family:'Prompt',sans-serif; font-weight:700; font-size:13px; padding:4px 10px; border-radius:20px; letter-spacing:0.5px; white-space:nowrap; }
+  .slots-badge { font-family:'Prompt',sans-serif; font-weight:700; font-size:11px; padding:4px 10px; border-radius:20px; letter-spacing:0.5px; white-space:nowrap; }
   .slots-badge.available { background:rgba(0,230,118,0.12); color:var(--green); border:1px solid rgba(0,230,118,0.25); }
   .slots-badge.full { background:rgba(255,60,60,0.1); color:var(--red); border:1px solid rgba(255,60,60,0.2); }
   .slots-badge.limited { background:rgba(255,184,0,0.12); color:var(--accent2); border:1px solid rgba(255,184,0,0.25); }
@@ -77,20 +77,20 @@
   .poster-img { width:100%; height:100%; object-fit:cover; display:block; }
   .poster-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
   .event-icon { font-size:32px; }
-  .event-name { font-family:'Prompt',sans-serif; font-weight:800; font-size:18px; color:var(--white); text-align:center; padding:0 16px; line-height:1.2; }
+  .event-name { font-family:'Prompt',sans-serif; font-weight:800; font-size:16px; color:var(--white); text-align:center; padding:0 16px; line-height:1.2; }
   .event-venue { font-size:10px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; }
   .poster-gradient-top { position:absolute; top:0; left:0; right:0; height:50px; background:linear-gradient(to bottom,rgba(20,20,20,0.8),transparent); }
   .poster-gradient-bottom { position:absolute; bottom:0; left:0; right:0; height:60px; background:linear-gradient(to top,rgba(20,20,20,1),transparent); }
-  .poster-type-tag { position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); color:var(--white); font-size:12px; font-weight:600; padding:3px 8px; border-radius:5px; letter-spacing:1px; border:1px solid rgba(255,255,255,0.1); }
+  .poster-type-tag { position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); color:var(--white); font-size:10px; font-weight:600; padding:3px 8px; border-radius:5px; letter-spacing:1px; border:1px solid rgba(255,255,255,0.1); }
 
   .devices-area { padding:12px 16px; border-bottom:1px solid var(--border); }
-  .devices-label { font-size:11px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+  .devices-label { font-size:9px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
   .device-list { display:flex; flex-direction:column; gap:6px; }
   .device-row { display:flex; align-items:center; justify-content:space-between; }
-  .device-name { font-family:'Prompt',sans-serif; font-weight:600; font-size:14px; }
+  .device-name { font-family:'Prompt',sans-serif; font-weight:600; font-size:12px; }
   .device-right { display:flex; align-items:center; gap:10px; }
-  .device-price { font-family:'Prompt',sans-serif; font-weight:700; font-size:14px; color:#ffd166; }
-  .device-status { display:flex; align-items:center; gap:5px; font-size:13px; font-weight:600; }
+  .device-price { font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; color:var(--accent2); }
+  .device-status { display:flex; align-items:center; gap:5px; font-size:11px; font-weight:600; }
   .dot { width:6px; height:6px; border-radius:50%; }
   .dot.green { background:var(--green); box-shadow:0 0 5px var(--green); }
   .dot.red { background:var(--red); }
@@ -98,11 +98,11 @@
 
   .cta-area { padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:10px; }
   .price-display { font-family:'Prompt',sans-serif; }
-  .price-from { font-size:11px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
-  .price-amount { font-size:22px; font-weight:800; line-height:1; }
-  .price-amount span { font-size:14px; color:var(--muted); font-weight:400; }
+  .price-from { font-size:9px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .price-amount { font-size:20px; font-weight:800; line-height:1; }
+  .price-amount span { font-size:12px; color:var(--muted); font-weight:400; }
 
-  .line-btn { display:flex; align-items:center; gap:6px; background:var(--line-green); color:#fff; padding:9px 16px; border-radius:10px; font-family:'Prompt',sans-serif; font-weight:700; font-size:15px; text-decoration:none; border:none; cursor:pointer; transition:transform 0.15s; white-space:nowrap; }
+  .line-btn { display:flex; align-items:center; gap:6px; background:var(--line-green); color:#fff; padding:9px 16px; border-radius:10px; font-family:'Prompt',sans-serif; font-weight:700; font-size:13px; text-decoration:none; border:none; cursor:pointer; transition:transform 0.15s; white-space:nowrap; }
   .line-btn.grey { background:#2a2a2a; }
   .line-btn:active { transform:scale(0.97); }
   .line-icon { width:17px; height:17px; }
@@ -115,7 +115,7 @@
   .no-result-text { font-family:'Prompt',sans-serif; font-size:15px; }
 
   .sticky-line { position:fixed; bottom:0; left:0; right:0; z-index:10; padding:12px 16px; background:linear-gradient(to top,var(--black) 70%,transparent); display:flex; justify-content:center; }
-  .sticky-line-btn { display:flex; align-items:center; gap:8px; background:linear-gradient(135deg,#ff4d8d,#ff85b3); color:#fff; padding:13px 28px; border-radius:50px; font-family:'Prompt',sans-serif; font-weight:700; font-size:16px; text-decoration:none; box-shadow:0 8px 28px rgba(255,77,141,0.35); transition:transform 0.15s; }
+  .sticky-line-btn { display:flex; align-items:center; gap:8px; background:var(--line-green); color:#fff; padding:13px 28px; border-radius:50px; font-family:'Prompt',sans-serif; font-weight:700; font-size:14px; text-decoration:none; box-shadow:0 8px 28px rgba(6,199,85,0.3); transition:transform 0.15s; }
   .sticky-line-btn:active { transform:scale(0.97); }
 
   .poster-area.no-img .poster-placeholder { display:flex; }
@@ -123,68 +123,14 @@
   .ev-sport   { background:linear-gradient(135deg,#001833,#003875,#001833); }
   .ev-festival{ background:linear-gradient(135deg,#1a1000,#3d2800,#1a1000); }
   .ev-tbd     { background:linear-gradient(135deg,#141414,#1e1e1e); }
-
-  /* NAV BAR */
-  .nav-bar { display:flex; overflow-x:auto; scrollbar-width:none; border-bottom:1px solid var(--border); background:var(--black); position:sticky; top:0; z-index:6; }
-  .nav-bar::-webkit-scrollbar { display:none; }
-  .nav-item { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 14px; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; text-decoration:none; color:var(--muted); min-width:72px; }
-  .nav-item.active { border-bottom-color:var(--accent); color:var(--accent); }
-  .nav-item:hover:not(.active) { color:#888; }
-  .nav-icon { font-size:15px; }
-  .nav-label { font-family:'Prompt',sans-serif; font-weight:600; font-size:12px; text-align:center; white-space:nowrap; }
-
-  /* DATE FILTER */
-  .date-filter-wrap { padding:6px 16px 8px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); position:sticky; top:100px; z-index:3; backdrop-filter:blur(12px); }
-  .date-filter-wrap::-webkit-scrollbar { display:none; }
-  .date-chip { flex-shrink:0; font-size:13px; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
-  .date-chip.active { background:#1e0e1e; color:var(--accent); border-color:var(--accent); }
-
-  /* PAGES */
-  .page { display:none; }
-  .page.active { display:block; }
-
-  /* DEVICES PAGE */
-  .devices-page { padding:16px 16px 100px; max-width:480px; margin:0 auto; }
-  .section-label { font-family:'Prompt',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
-  .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
-  .device-card { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; overflow:hidden; }
-  .device-card-img-wrap { width:100%; aspect-ratio:4/3; background:#1a0d1a; display:flex; align-items:center; justify-content:center; font-size:52px; }
-  .device-card-body { padding:14px 16px; }
-  .device-card-name { font-family:'Prompt',sans-serif; font-weight:800; font-size:16px; margin-bottom:3px; }
-  .device-card-brand { font-size:10px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
-  .device-specs { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:6px; }
-  .spec-chip { font-size:11px; font-weight:600; padding:3px 8px; border-radius:6px; background:#1e0e1e; border:1px solid var(--border); color:#ccc; }
-  .device-equip { padding:10px 16px; border-top:1px solid var(--border); }
-  .equip-label { font-size:9px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
-  .equip-list { display:flex; flex-wrap:wrap; gap:8px; }
-  .equip-item { display:flex; align-items:center; gap:5px; font-size:11px; color:#ccc; }
-  .equip-dot { width:4px; height:4px; border-radius:50%; background:var(--accent); }
-
-  /* DATE FILTER */
-  .date-filter-wrap { padding:6px 16px 8px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); }
-  .date-filter-wrap::-webkit-scrollbar { display:none; }
-  .date-filter-label { font-size:12px; color:var(--muted); letter-spacing:2px; text-transform:uppercase; padding:8px 16px 4px; background:rgba(10,10,10,0.95); border-bottom:none; }
-  .date-chip { flex-shrink:0; font-size:13px; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
-  .date-chip.active { background:#1e0e1e; color:var(--accent); border-color:var(--accent); }
-
-  /* RENTAL / PROMO PAGE */
-  .img-page { padding:16px 16px 100px; max-width:480px; margin:0 auto; }
-  .full-img { width:100%; border-radius:14px; border:1px solid var(--border); display:block; }
-  .img-placeholder { width:100%; aspect-ratio:3/4; background:var(--card-bg); border:1px solid var(--border); border-radius:14px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:var(--muted); }
-  .img-placeholder-icon { font-size:40px; }
-  .img-placeholder-text { font-family:'Prompt',sans-serif; font-size:13px; }
 </style>
 </head>
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;gap:10px;">
-    <img src="https://raw.githubusercontent.com/primmyy/primmyrental/main/logo.png" 
-         alt="logo" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #ff4d8d44;background:linear-gradient(135deg,#ff4d8d22,#ff85b322);">
-    <div>
-      <div class="logo">Pcherri<span>.</span>Phone</div>
-      <div class="header-tag">ตารางงานและเครื่องว่าง</div>
-    </div>
+  <div>
+    <div class="logo">LENS<span>.</span>RENTAL</div>
+    <div class="header-tag">ตารางงานและเครื่องว่าง</div>
   </div>
   <div style="text-align:right">
     <div class="update-label">อัปเดตล่าสุด</div>
@@ -199,109 +145,43 @@
   </div>
 </div>
 
-<nav class="nav-bar">
-  <a class="nav-item active" onclick="switchPage('queue',this)">
-    <span class="nav-icon">📅</span>
-    <span class="nav-label">คิวว่าง</span>
-  </a>
-  <a class="nav-item" href="https://x.com/hashtag/pcherry%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7?src=hashtag_click" target="_blank">
-    <span class="nav-icon">⭐</span>
-    <span class="nav-label">รีวิว</span>
-  </a>
-  <a class="nav-item" onclick="switchPage('devices',this)">
-    <span class="nav-icon">📱</span>
-    <span class="nav-label">รุ่นที่เช่า</span>
-  </a>
-  <a class="nav-item" onclick="switchPage('rental',this)">
-    <span class="nav-icon">📋</span>
-    <span class="nav-label">รายละเอียด</span>
-  </a>
-  <a class="nav-item" onclick="switchPage('promo',this)">
-    <span class="nav-icon">🎁</span>
-    <span class="nav-label">โปรโมชั่น</span>
-  </a>
-</nav>
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num green" id="statAvail">—</div><div class="stat-label">คิวว่าง</div></div>
+  <div class="stat-item"><div class="stat-num yellow" id="statLimited">—</div><div class="stat-label">เหลือน้อย</div></div>
+  <div class="stat-item"><div class="stat-num red" id="statFull">—</div><div class="stat-label">เต็มแล้ว</div></div>
+  <div class="stat-item"><div class="stat-num" id="statTotal">—</div><div class="stat-label">งานทั้งหมด</div></div>
+</div>
 
-<div id="page-queue" class="page active">
 <div class="filter-wrap">
   <div class="filter-label">เลือกเดือน</div>
   <div class="month-tabs" id="monthTabs"></div>
 </div>
+
 <div class="device-filter-wrap" id="deviceFilter"></div>
-<div class="date-filter-label">เลือกวันที่</div>
-<div class="date-filter-wrap" id="dateFilter"><button class="date-chip active" data-date="all" onclick="filterDate(this)">ทั้งหมด</button></div>
+
 <main id="mainContent">
   <div class="loading-wrap">
     <div class="spinner"></div>
     <div class="loading-text">กำลังโหลดข้อมูล...</div>
   </div>
 </main>
-</div>
-
-<div id="page-devices" class="page">
-<div class="devices-page">
-  <div class="section-label">รุ่นที่ปล่อยเช่า</div>
-  <div id="devicesList">
-    <div class="loading-wrap">
-      <div class="spinner"></div>
-      <div class="loading-text">กำลังโหลดข้อมูล...</div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div id="page-rental" class="page">
-<div class="img-page">
-  <div class="section-label">รายละเอียดการเช่า</div>
-  <!-- ← เปลี่ยน src เป็น URL รูปจริง -->
-  <div class="img-placeholder">
-    <div class="img-placeholder-icon">🖼️</div>
-    <div class="img-placeholder-text">วางรูปรายละเอียดการเช่าที่นี่</div>
-  </div>
-</div>
-</div>
-
-<div id="page-promo" class="page">
-<div class="img-page">
-  <div class="section-label">โปรโมชั่นประจำเดือน</div>
-  <!-- ← เปลี่ยน src เป็น URL รูปจริง -->
-  <div class="img-placeholder">
-    <div class="img-placeholder-icon">🎁</div>
-    <div class="img-placeholder-text">วางรูปโปรโมชั่นที่นี่</div>
-  </div>
-</div>
-</div>
 
 <div class="sticky-line">
-  <a href="https://lin.ee/qr6XFNM" id="lineBtn" class="sticky-line-btn">
+  <a href="https://line.me" id="lineBtn" class="sticky-line-btn">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.105.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
     ทัก LINE จองคิวได้เลย
   </a>
 </div>
 
 <script>
-// PAGE SWITCHING — ต้องอยู่ต้น script เพื่อให้ onclick ใน HTML เรียกได้
-function switchPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const pg = document.getElementById('page-' + id);
-  if (pg) pg.classList.add('active');
-  if (el) el.classList.add('active');
-}
-
-function filterDate(el) {
-  document.querySelectorAll('#dateFilter .date-chip').forEach(b => b.classList.remove('active'));
-  if (el) el.classList.add('active');
-  activeDateFilter = el ? el.dataset.date : 'all';
-  render();
-}
-
 // ============================================================
 // CONFIG — แก้ตรงนี้เท่านั้น
 // ============================================================
-const LINE_URL = "https://lin.ee/qr6XFNM"; // ← ใส่ลิงก์ LINE จริง
+const LINE_URL = "https://line.me"; // ← ใส่ลิงก์ LINE จริง
 
-const API_URL = "https://script.google.com/macros/s/AKfycbx4lsBBSI8TpL61s5R5hMUur2_ixBpLdhdzgJyKLay82JJjBqUAFWkFEdHgMCxzE3hN/exec";
+const SHEET_STATUS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=0&single=true&output=csv";
+const SHEET_PRICE  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=1341870105&single=true&output=csv";
+const SHEET_EVENTS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=230517479&single=true&output=csv";
 
 const MONTH_TH = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
 const MONTH_FULL = ["","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
@@ -312,7 +192,7 @@ const LINE_SVG = `<svg class="line-icon" viewBox="0 0 24 24" fill="white"><path 
 
 // ============================================================
 document.getElementById("lineBtn").href = LINE_URL;
-let activeMonth = "all", activeDevice = "all", activeDateFilter = "all";
+let activeMonth = "all", activeDevice = "all";
 let allData = [];
 
 function parseCSV(text) {
@@ -339,51 +219,42 @@ function parseCSV(text) {
   });
 }
 
-async function fetchAllData() {
-  const res = await fetch(API_URL, {
-    redirect: 'follow',
-    method: 'GET',
-  });
-  if (!res.ok) throw new Error("API error " + res.status);
-  const text = await res.text();
-  return JSON.parse(text);
+async function fetchCSV(url) {
+  try {
+    const res = await fetch(url);
+    if (res.ok) return parseCSV(await res.text());
+  } catch(e) {}
+  const proxy = 'https://corsproxy.io/?' + encodeURIComponent(url);
+  const res2 = await fetch(proxy);
+  return parseCSV(await res2.text());
 }
 
 async function loadAll() {
   try {
-    const data = await fetchAllData();
-    const statusRows = data.status  || [];
-    const priceRows  = data.price   || [];
-    const eventRows  = data.events  || [];
+    const [statusRows, priceRows, eventRows] = await Promise.all([
+      fetchCSV(SHEET_STATUS), fetchCSV(SHEET_PRICE), fetchCSV(SHEET_EVENTS)
+    ]);
 
     // Index by date
-    const statusByDate = {}, priceByDate = {};
-    const eventsByDate = {};
+    const statusByDate = {}, priceByDate = {}, eventByDate = {};
     statusRows.forEach(r => { if(r["วันที่"]) statusByDate[r["วันที่"]] = r; });
     priceRows.forEach(r  => { if(r["วันที่"]) priceByDate[r["วันที่"]]  = r; });
-    eventRows.forEach(r  => {
-      if (!r["วันที่"]) return;
-      if (!eventsByDate[r["วันที่"]]) eventsByDate[r["วันที่"]] = [];
-      if (r["ชื่องาน"] && r["ชื่องาน"].trim()) eventsByDate[r["วันที่"]].push(r);
-    });
+    eventRows.forEach(r  => { if(r["วันที่"]) eventByDate[r["วันที่"]]  = r; });
 
     // Get all devices from header (skip วันที่)
     const devices = Object.keys(statusRows[0] || {}).filter(k => k !== "วันที่");
 
-    function guessType(name) {
-      const n = (name || "").toLowerCase();
-      if (n.includes("concert") || n.includes("คอนเสิร์ต") || n.includes("fan") || n.includes("series") || n.includes("unchained")) return "CONCERT";
-      if (n.includes("sport") || n.includes("football") || n.includes("match")) return "SPORT";
-      if (n.includes("fest") || n.includes("festival") || n.includes("mission")) return "FESTIVAL";
-      return "CONCERT";
-    }
-
-    // Build unified data — การ์ดละ 1 งาน (หลายงานต่อวัน = หลายการ์ด)
-    allData = [];
-    Object.keys(statusByDate).forEach(dateStr => {
+    // Build unified data - แสดงเฉพาะวันที่มีงานหรือมีเครื่องเต็ม
+    allData = Object.keys(statusByDate).filter(dateStr => {
+      const ev = eventByDate[dateStr] || {};
+      const statusRow = statusByDate[dateStr] || {};
+      const hasEvent = ev["ชื่องาน"] && ev["ชื่องาน"].trim();
+      const hasFull = Object.values(statusRow).some(v => (v||"").includes("เต็ม"));
+      return hasEvent || hasFull;
+    }).map(dateStr => {
       const [d, m] = dateStr.split("/").map(Number);
-      const year = m >= 5 ? 2026 : 2027;
-      const dateObj = new Date(year, m-1, d);
+      const year = m >= 5 ? 2026 : 2027; const dateObj = new Date(year, m-1, d);
+      const ev = eventByDate[dateStr] || {};
       const statusRow = statusByDate[dateStr];
       const priceRow = priceByDate[dateStr] || {};
 
@@ -395,61 +266,41 @@ async function loadAll() {
 
       const availCount = deviceData.filter(d => d.status === "available").length;
       const overallStatus = availCount === 0 ? "full" : availCount <= 2 ? "limited" : "available";
-      const slotsLabel = availCount === 0 ? "เต็มแล้ว" : availCount <= 2 ? `เหลือ ${availCount} รุ่น` : `ว่าง ${availCount} รุ่น`;
+      const slotsLabel = availCount === 0 ? "เต็มแล้ว" : availCount <= 2 ? `เหลือ ${availCount} คิว` : `ว่าง ${availCount} คิว`;
       const minPrice = deviceData.filter(d => d.status === "available" && d.price).map(d => parseInt(d.price)).filter(Boolean).sort((a,b)=>a-b)[0];
-
-      const events = eventsByDate[dateStr] || [];
-      const hasFull = Object.values(statusRow).some(v => (v||"").includes("เต็ม"));
-
-      if (events.length > 0) {
-        // มีงาน → สร้างการ์ดละงาน
-        events.forEach(ev => {
-          const type = (ev["ประเภท"] || guessType(ev["ชื่องาน"])).toUpperCase();
-          allData.push({
-            dateStr, day: d, month: m, dateObj,
-            dayName: DAY_TH[dateObj.getDay()],
-            monthShort: MONTH_TH[m],
-            eventName: ev["ชื่องาน"] || "",
-            venue: ev["สถานที่"] || "",
-            type, evClass: EV_TYPES[type] || "ev-tbd",
-            icon: EV_ICONS[type] || EV_ICONS.DEFAULT,
-            posterUrl: ev["รูปโปสเตอร์"] || "",
-            status: overallStatus, slotsLabel,
-            minPrice, deviceData
-          });
-        });
-      } else if (hasFull) {
-        // ไม่มีงานแต่มีเครื่องเต็ม → แสดง 1 การ์ด
-        allData.push({
-          dateStr, day: d, month: m, dateObj,
-          dayName: DAY_TH[dateObj.getDay()],
-          monthShort: MONTH_TH[m],
-          eventName: "", venue: "",
-          type: "TBD", evClass: "ev-tbd", icon: "📅",
-          posterUrl: "",
-          status: overallStatus, slotsLabel,
-          minPrice, deviceData
-        });
+      // ตรวจ type จากคอลัมน์ประเภท หรือ guess จากชื่องาน
+      let type = (ev["ประเภท"] || "").toUpperCase();
+      if (!type) {
+        const name = (ev["ชื่องาน"] || "").toLowerCase();
+        if (name.includes("concert") || name.includes("คอนเสิร์ต") || name.includes("fan")) type = "CONCERT";
+        else if (name.includes("sport") || name.includes("football") || name.includes("match")) type = "SPORT";
+        else if (name.includes("fest") || name.includes("festival")) type = "FESTIVAL";
+        else if (ev["ชื่องาน"]) type = "CONCERT"; // ถ้ามีชื่องานแต่ไม่รู้ประเภท ใช้ CONCERT
+        else type = "TBD";
       }
-    });
-    allData.sort((a,b) => a.dateObj - b.dateObj);
+
+      return {
+        dateStr, day: d, month: m, dateObj,
+        dayName: DAY_TH[dateObj.getDay()],
+        monthShort: MONTH_TH[m],
+        eventName: ev["ชื่องาน"] || "",
+        venue: ev["สถานที่"] || "",
+        type, evClass: EV_TYPES[type] || "ev-tbd",
+        icon: EV_ICONS[type] || EV_ICONS.DEFAULT,
+        posterUrl: ev["รูปโปสเตอร์"] || "",
+        status: overallStatus, slotsLabel,
+        minPrice, deviceData
+      };
+    }).sort((a,b) => a.dateObj - b.dateObj);
 
     buildDeviceFilter(devices);
-
-    // หาเดือนล่าสุดที่มีข้อมูล
-    const months = [...new Set(allData.map(e => e.month))].sort((a,b) => a-b);
-    activeMonth = months[months.length - 1] || "all"; // เริ่มที่เดือนล่าสุด
-
-    buildMonthTabs(activeMonth);
+    buildMonthTabs();
     updateStats();
-    activeDateFilter = "all";
-    buildDateFilter();
     render();
     document.getElementById("lastUpdate").textContent = new Date().toLocaleDateString("th-TH", {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
 
   } catch(e) {
-    console.error("loadAll error:", e);
-    document.getElementById("mainContent").innerHTML = `<div class="no-result"><div class="no-result-icon">⚠️</div><div class="no-result-text">โหลดข้อมูลไม่ได้: ${e.message}</div></div>`;
+    document.getElementById("mainContent").innerHTML = `<div class="no-result"><div class="no-result-icon">⚠️</div><div class="no-result-text">โหลดข้อมูลไม่ได้ กรุณาลองใหม่</div></div>`;
   }
 }
 
@@ -466,17 +317,16 @@ function buildDeviceFilter(devices) {
   });
 }
 
-function buildMonthTabs(defaultMonth) {
+function buildMonthTabs() {
   const months = [...new Set(allData.map(e => e.month))].sort((a,b)=>a-b);
   const tabs = document.getElementById("monthTabs");
-  tabs.innerHTML = `<button class="month-tab" data-month="all">ทั้งหมด</button>` +
-    months.map(m => `<button class="month-tab ${m === defaultMonth ? 'active' : ''}" data-month="${m}">${MONTH_TH[m]}</button>`).join("");
+  tabs.innerHTML = `<button class="month-tab active" data-month="all">ทั้งหมด</button>` +
+    months.map(m => `<button class="month-tab" data-month="${m}">${MONTH_TH[m]}</button>`).join("");
   tabs.addEventListener("click", e => {
     if (!e.target.classList.contains("month-tab")) return;
     tabs.querySelectorAll(".month-tab").forEach(b => b.classList.remove("active"));
     e.target.classList.add("active");
     activeMonth = e.target.dataset.month === "all" ? "all" : parseInt(e.target.dataset.month);
-    buildDateFilter();
     render();
   });
 }
@@ -553,8 +403,7 @@ function render() {
   const filtered = allData.filter(ev => {
     const mOk = activeMonth === "all" || ev.month === activeMonth;
     const dOk = activeDevice === "all" || ev.deviceData.some(d => d.name === activeDevice);
-    const dateOk = activeDateFilter === "all" || ev.dateStr === activeDateFilter;
-    return mOk && dOk && dateOk;
+    return mOk && dOk;
   });
 
   if (filtered.length === 0) {
@@ -574,89 +423,6 @@ function render() {
   document.getElementById("mainContent").innerHTML = html;
 }
 
-// ===== PAGE SWITCHING =====
-function switchPage(id, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const pg = document.getElementById('page-' + id);
-  if (pg) pg.classList.add('active');
-  if (el) el.classList.add('active');
-}
-
-// ===== DATE FILTER =====
-
-function buildDateFilter() {
-  const wrap = document.getElementById('dateFilter');
-  if (!wrap) return;
-  activeDateFilter = 'all'; // reset ทุกครั้ง
-  const dates = [...new Set(
-    allData
-      .filter(e => activeMonth === 'all' || e.month === activeMonth)
-      .map(e => e.dateStr)
-  )].sort();
-  const MONTHS = ['','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
-  let html = '<button class="date-chip active" data-date="all" onclick="filterDate(this)">ทั้งหมด</button>';
-  dates.forEach(d => {
-    const parts = d.split('/');
-    const day = parts[0], mon = parseInt(parts[1]);
-    html += '<button class="date-chip" data-date="' + d + '" onclick="filterDate(this)">' + day + ' ' + MONTHS[mon] + '</button>';
-  });
-  wrap.innerHTML = html;
-}
-
-function filterDate(el) {
-  document.querySelectorAll('#dateFilter .date-chip').forEach(b => b.classList.remove('active'));
-  if (el) el.classList.add('active');
-  activeDateFilter = el ? el.dataset.date : 'all';
-  render();
-}
-
-
-// ===== LOAD DEVICES FROM SHEET =====
-async function loadDevices() {
-  try {
-    const data = await fetchAllData();
-    const rows = data.devices || [];
-    const list = document.getElementById('devicesList');
-    if (!rows || rows.length === 0) { list.innerHTML = '<div class="no-result"><div class="no-result-text">ไม่พบข้อมูลรุ่น</div></div>'; return; }
-
-    const BRAND_ICONS = { SAMSUNG:'📱', APPLE:'🍎', VIVO:'📷' };
-
-    list.innerHTML = rows.map(r => {
-      const name   = r['รุ่น'] || '';
-      const brand  = (r['แบรนด์'] || '').toUpperCase();
-      const specs  = (r['สเปคกล้อง'] || '').split(',').map(s => s.trim()).filter(Boolean);
-      const equips = (r['อุปกรณ์'] || '').split(',').map(s => s.trim()).filter(Boolean);
-      const imgUrl = r['รูป'] || '';
-      const icon   = BRAND_ICONS[brand] || '📱';
-
-      const imgHTML = imgUrl
-        ? `<img src="${imgUrl}" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;" onerror="this.parentElement.innerHTML='<div class=\'device-card-img-wrap\'>${icon}</div>'">`
-        : `<div class="device-card-img-wrap">${icon}</div>`;
-
-      const specChips = specs.map(s => `<span class="spec-chip">${s}</span>`).join('');
-      const equipItems = equips.map(e => `<div class="equip-item"><div class="equip-dot"></div> ${e}</div>`).join('');
-
-      return `
-        <div class="device-card">
-          ${imgHTML}
-          <div class="device-card-body">
-            <div class="device-card-name">${name}</div>
-            <div class="device-card-brand">${brand}</div>
-            <div class="device-specs">${specChips}</div>
-          </div>
-          <div class="device-equip">
-            <div class="equip-label">อุปกรณ์ที่ให้มา</div>
-            <div class="equip-list">${equipItems}</div>
-          </div>
-        </div>`;
-    }).join('');
-  } catch(e) {
-    document.getElementById('devicesList').innerHTML = '<div class="no-result"><div class="no-result-text">โหลดข้อมูลไม่ได้</div></div>';
-  }
-}
-
-// เรียก loadAll หลังฟังก์ชันทั้งหมด define แล้ว
 loadAll();
 </script>
 </body>

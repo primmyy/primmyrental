@@ -445,7 +445,12 @@ async function loadAll() {
     allData.sort((a,b) => a.dateObj - b.dateObj);
 
     buildDeviceFilter(devices);
-    buildMonthTabs();
+
+    // หาเดือนล่าสุดที่มีข้อมูล
+    const months = [...new Set(allData.map(e => e.month))].sort((a,b) => a-b);
+    activeMonth = months[months.length - 1] || "all"; // เริ่มที่เดือนล่าสุด
+
+    buildMonthTabs(activeMonth);
     updateStats();
     activeDateFilter = "all";
     buildDateFilter();
@@ -470,11 +475,11 @@ function buildDeviceFilter(devices) {
   });
 }
 
-function buildMonthTabs() {
+function buildMonthTabs(defaultMonth) {
   const months = [...new Set(allData.map(e => e.month))].sort((a,b)=>a-b);
   const tabs = document.getElementById("monthTabs");
-  tabs.innerHTML = `<button class="month-tab active" data-month="all">ทั้งหมด</button>` +
-    months.map(m => `<button class="month-tab" data-month="${m}">${MONTH_TH[m]}</button>`).join("");
+  tabs.innerHTML = `<button class="month-tab" data-month="all">ทั้งหมด</button>` +
+    months.map(m => `<button class="month-tab ${m === defaultMonth ? 'active' : ''}" data-month="${m}">${MONTH_TH[m]}</button>`).join("");
   tabs.addEventListener("click", e => {
     if (!e.target.classList.contains("month-tab")) return;
     tabs.querySelectorAll(".month-tab").forEach(b => b.classList.remove("active"));

@@ -301,10 +301,7 @@ function filterDate(el) {
 // ============================================================
 const LINE_URL = "https://lin.ee/qr6XFNM"; // ← ใส่ลิงก์ LINE จริง
 
-const SHEET_STATUS = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=0&single=true&output=csv";
-const SHEET_PRICE  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=1341870105&single=true&output=csv";
-const SHEET_EVENTS  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=230517479&single=true&output=csv";
-const SHEET_DEVICES = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQaDqZpNcSlcVVrLHyolWxHs4j2GI62zBLibK8qE1zu6FBHBR9GcWTvgCNv11wumECbMHBtgcMB2yKr/pub?gid=1408258984&single=true&output=csv";
+const API_URL = "https://script.google.com/macros/s/AKfycbx4lsBBSI8TpL61s5R5hMUur2_ixBpLdhdzgJyKLay82JJjBqUAFWkFEdHgMCxzE3hN/exec";
 
 const MONTH_TH = ["","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."];
 const MONTH_FULL = ["","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
@@ -342,32 +339,21 @@ function parseCSV(text) {
   });
 }
 
-async function fetchCSV(url) {
-  // Google Sheets redirect เสมอ ใช้ proxy ทันที
-  const proxies = [
-    "https://api.allorigins.win/raw?url=" + encodeURIComponent(url),
-    "https://corsproxy.io/?" + encodeURIComponent(url),
-  ];
-  for (const proxyUrl of proxies) {
-    try {
-      const res = await fetch(proxyUrl);
-      if (!res.ok) continue;
-      const text = await res.text();
-      if (text && !text.trim().startsWith('<')) return parseCSV(text);
-    } catch(e) { continue; }
-  }
-  throw new Error("ดึงข้อมูลไม่ได้");
+async function fetchAllData() {
+  const res = await fetch(API_URL);
+  if (!res.ok) throw new Error("API error");
+  return await res.json();
 }
 
 async function loadAll() {
   try {
-    const [statusRows, priceRows, eventRows] = await Promise.all([
-      fetchCSV(SHEET_STATUS), fetchCSV(SHEET_PRICE), fetchCSV(SHEET_EVENTS)
-    ]);
+    const data = await fetchAllData();
+    const statusRows = data.status  || [];
+    const priceRows  = data.price   || [];
+    const eventRows  = data.events  || [];
 
-    // Index by date — status & price: 1 แถวต่อวัน, events: หลายแถวต่อวันได้
+    // Index by date
     const statusByDate = {}, priceByDate = {};
-    // events: เก็บเป็น array รองรับหลายงานต่อวัน
     const eventsByDate = {};
     statusRows.forEach(r => { if(r["วันที่"]) statusByDate[r["วันที่"]] = r; });
     priceRows.forEach(r  => { if(r["วันที่"]) priceByDate[r["วันที่"]]  = r; });
@@ -624,7 +610,8 @@ function filterDate(el) {
 // ===== LOAD DEVICES FROM SHEET =====
 async function loadDevices() {
   try {
-    const rows = await fetchCSV(SHEET_DEVICES);
+    const data = await fetchAllData();
+    const rows = data.devices || [];
     const list = document.getElementById('devicesList');
     if (!rows || rows.length === 0) { list.innerHTML = '<div class="no-result"><div class="no-result-text">ไม่พบข้อมูลรุ่น</div></div>'; return; }
 

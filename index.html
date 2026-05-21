@@ -22,7 +22,7 @@
   .update-label { font-size:10px; color:var(--muted); letter-spacing:1px; }
   .update-time { font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; }
 
-  .ticker-wrap { background:var(--accent); overflow:hidden; white-space:nowrap; padding:7px 0; position:relative; z-index:1; }
+  .ticker-wrap { background:linear-gradient(90deg,#ff4d8d,#ff85b3,#ff4d8d); overflow:hidden; white-space:nowrap; padding:7px 0; position:relative; z-index:1; }
   .ticker-inner { display:inline-block; animation:ticker 24s linear infinite; font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; letter-spacing:1px; color:#fff; }
   @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
@@ -89,7 +89,7 @@
   .device-row { display:flex; align-items:center; justify-content:space-between; }
   .device-name { font-family:'Prompt',sans-serif; font-weight:600; font-size:12px; }
   .device-right { display:flex; align-items:center; gap:10px; }
-  .device-price { font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; color:var(--accent2); }
+  .device-price { font-family:'Prompt',sans-serif; font-weight:700; font-size:12px; color:#ffd166; }
   .device-status { display:flex; align-items:center; gap:5px; font-size:11px; font-weight:600; }
   .dot { width:6px; height:6px; border-radius:50%; }
   .dot.green { background:var(--green); box-shadow:0 0 5px var(--green); }
@@ -115,7 +115,7 @@
   .no-result-text { font-family:'Prompt',sans-serif; font-size:15px; }
 
   .sticky-line { position:fixed; bottom:0; left:0; right:0; z-index:10; padding:12px 16px; background:linear-gradient(to top,var(--black) 70%,transparent); display:flex; justify-content:center; }
-  .sticky-line-btn { display:flex; align-items:center; gap:8px; background:var(--line-green); color:#fff; padding:13px 28px; border-radius:50px; font-family:'Prompt',sans-serif; font-weight:700; font-size:14px; text-decoration:none; box-shadow:0 8px 28px rgba(6,199,85,0.3); transition:transform 0.15s; }
+  .sticky-line-btn { display:flex; align-items:center; gap:8px; background:linear-gradient(135deg,#ff4d8d,#ff85b3); color:#fff; padding:13px 28px; border-radius:50px; font-family:'Prompt',sans-serif; font-weight:700; font-size:14px; text-decoration:none; box-shadow:0 8px 28px rgba(255,77,141,0.35); transition:transform 0.15s; }
   .sticky-line-btn:active { transform:scale(0.97); }
 
   .poster-area.no-img .poster-placeholder { display:flex; }
@@ -123,6 +123,49 @@
   .ev-sport   { background:linear-gradient(135deg,#001833,#003875,#001833); }
   .ev-festival{ background:linear-gradient(135deg,#1a1000,#3d2800,#1a1000); }
   .ev-tbd     { background:linear-gradient(135deg,#141414,#1e1e1e); }
+
+  /* NAV BAR */
+  .nav-bar { display:flex; overflow-x:auto; scrollbar-width:none; border-bottom:1px solid var(--border); background:var(--black); position:sticky; top:0; z-index:6; }
+  .nav-bar::-webkit-scrollbar { display:none; }
+  .nav-item { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 14px; cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; text-decoration:none; color:var(--muted); min-width:72px; }
+  .nav-item.active { border-bottom-color:var(--accent); color:var(--accent); }
+  .nav-item:hover:not(.active) { color:#888; }
+  .nav-icon { font-size:15px; }
+  .nav-label { font-family:'Prompt',sans-serif; font-weight:600; font-size:10px; text-align:center; white-space:nowrap; }
+
+  /* DATE FILTER */
+  .date-filter-wrap { padding:6px 16px 8px; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; background:rgba(10,10,10,0.95); border-bottom:1px solid var(--border); position:sticky; top:100px; z-index:3; backdrop-filter:blur(12px); }
+  .date-filter-wrap::-webkit-scrollbar { display:none; }
+  .date-chip { flex-shrink:0; font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+  .date-chip.active { background:#1e0e1e; color:var(--accent); border-color:var(--accent); }
+
+  /* PAGES */
+  .page { display:none; }
+  .page.active { display:block; }
+
+  /* DEVICES PAGE */
+  .devices-page { padding:16px 16px 100px; max-width:480px; margin:0 auto; }
+  .section-label { font-family:'Prompt',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+  .device-card { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; overflow:hidden; }
+  .device-card-img-wrap { width:100%; aspect-ratio:4/3; background:#1a0d1a; display:flex; align-items:center; justify-content:center; font-size:52px; }
+  .device-card-body { padding:14px 16px; }
+  .device-card-name { font-family:'Prompt',sans-serif; font-weight:800; font-size:16px; margin-bottom:3px; }
+  .device-card-brand { font-size:10px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+  .device-specs { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:6px; }
+  .spec-chip { font-size:11px; font-weight:600; padding:3px 8px; border-radius:6px; background:#1e0e1e; border:1px solid var(--border); color:#ccc; }
+  .device-equip { padding:10px 16px; border-top:1px solid var(--border); }
+  .equip-label { font-size:9px; font-weight:600; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+  .equip-list { display:flex; flex-wrap:wrap; gap:8px; }
+  .equip-item { display:flex; align-items:center; gap:5px; font-size:11px; color:#ccc; }
+  .equip-dot { width:4px; height:4px; border-radius:50%; background:var(--accent); }
+
+  /* RENTAL / PROMO PAGE */
+  .img-page { padding:16px 16px 100px; max-width:480px; margin:0 auto; }
+  .full-img { width:100%; border-radius:14px; border:1px solid var(--border); display:block; }
+  .img-placeholder { width:100%; aspect-ratio:3/4; background:var(--card-bg); border:1px solid var(--border); border-radius:14px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; color:var(--muted); }
+  .img-placeholder-icon { font-size:40px; }
+  .img-placeholder-text { font-family:'Prompt',sans-serif; font-size:13px; }
 </style>
 </head>
 <body>
@@ -130,7 +173,7 @@
 <header>
   <div style="display:flex;align-items:center;gap:10px;">
     <img src="https://raw.githubusercontent.com/primmyy/primmyrental/main/logo.png" 
-         alt="logo" style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
+         alt="logo" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #ff4d8d44;background:linear-gradient(135deg,#ff4d8d22,#ff85b322);">
     <div>
       <div class="logo">Pcherri<span>.</span>Phone</div>
       <div class="header-tag">ตารางงานและเครื่องว่าง</div>
@@ -149,26 +192,122 @@
   </div>
 </div>
 
-<div class="stats-bar">
-  <div class="stat-item"><div class="stat-num green" id="statAvail">—</div><div class="stat-label">คิวว่าง</div></div>
-  <div class="stat-item"><div class="stat-num yellow" id="statLimited">—</div><div class="stat-label">เหลือน้อย</div></div>
-  <div class="stat-item"><div class="stat-num red" id="statFull">—</div><div class="stat-label">เต็มแล้ว</div></div>
-  <div class="stat-item"><div class="stat-num" id="statTotal">—</div><div class="stat-label">งานทั้งหมด</div></div>
-</div>
+<nav class="nav-bar">
+  <a class="nav-item active" onclick="switchPage('queue',this)">
+    <span class="nav-icon">📅</span>
+    <span class="nav-label">คิวว่าง</span>
+  </a>
+  <a class="nav-item" href="https://x.com/hashtag/pcherry%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7?src=hashtag_click" target="_blank">
+    <span class="nav-icon">⭐</span>
+    <span class="nav-label">รีวิว</span>
+  </a>
+  <a class="nav-item" onclick="switchPage('devices',this)">
+    <span class="nav-icon">📱</span>
+    <span class="nav-label">รุ่นที่เช่า</span>
+  </a>
+  <a class="nav-item" onclick="switchPage('rental',this)">
+    <span class="nav-icon">📋</span>
+    <span class="nav-label">รายละเอียด</span>
+  </a>
+  <a class="nav-item" onclick="switchPage('promo',this)">
+    <span class="nav-icon">🎁</span>
+    <span class="nav-label">โปรโมชั่น</span>
+  </a>
+</nav>
 
+<div id="page-queue" class="page active">
 <div class="filter-wrap">
   <div class="filter-label">เลือกเดือน</div>
   <div class="month-tabs" id="monthTabs"></div>
 </div>
-
 <div class="device-filter-wrap" id="deviceFilter"></div>
-
+<div class="date-filter-wrap" id="dateFilter"><button class="date-chip active" data-date="all">ทั้งหมด</button></div>
 <main id="mainContent">
   <div class="loading-wrap">
     <div class="spinner"></div>
     <div class="loading-text">กำลังโหลดข้อมูล...</div>
   </div>
 </main>
+</div>
+
+<div id="page-devices" class="page">
+<div class="devices-page">
+  <div class="section-label">รุ่นที่ปล่อยเช่า</div>
+  <div class="device-card">
+    <div class="device-card-img-wrap">📱</div>
+    <div class="device-card-body">
+      <div class="device-card-name">Samsung S26 Ultra</div>
+      <div class="device-card-brand">SAMSUNG · GALAXY S SERIES</div>
+      <div class="device-specs"><span class="spec-chip">200MP</span><span class="spec-chip">6.9" Display</span><span class="spec-chip">S Pen</span><span class="spec-chip">AI Features</span></div>
+    </div>
+    <div class="device-equip">
+      <div class="equip-label">อุปกรณ์ที่ให้มา</div>
+      <div class="equip-list">
+        <div class="equip-item"><div class="equip-dot"></div> สายชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> หัวชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> เคสกันกระแทก</div>
+        <div class="equip-item"><div class="equip-dot"></div> ผ้าเช็ดหน้าจอ</div>
+      </div>
+    </div>
+  </div>
+  <div class="device-card">
+    <div class="device-card-img-wrap">📱</div>
+    <div class="device-card-body">
+      <div class="device-card-name">Vivo X300 Ultra + Lens</div>
+      <div class="device-card-brand">VIVO · X SERIES</div>
+      <div class="device-specs"><span class="spec-chip">Zeiss Optics</span><span class="spec-chip">1" Sensor</span><span class="spec-chip">External Lens</span><span class="spec-chip">8K Video</span></div>
+    </div>
+    <div class="device-equip">
+      <div class="equip-label">อุปกรณ์ที่ให้มา</div>
+      <div class="equip-list">
+        <div class="equip-item"><div class="equip-dot"></div> สายชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> หัวชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> เลนส์ภายนอก</div>
+        <div class="equip-item"><div class="equip-dot"></div> กระเป๋าเลนส์</div>
+        <div class="equip-item"><div class="equip-dot"></div> เคสกันกระแทก</div>
+      </div>
+    </div>
+  </div>
+  <div class="device-card">
+    <div class="device-card-img-wrap">📱</div>
+    <div class="device-card-body">
+      <div class="device-card-name">iPhone 17 Pro Max</div>
+      <div class="device-card-brand">APPLE · IPHONE 17 SERIES</div>
+      <div class="device-specs"><span class="spec-chip">48MP</span><span class="spec-chip">6.9" ProMotion</span><span class="spec-chip">A19 Pro</span><span class="spec-chip">ProRes</span></div>
+    </div>
+    <div class="device-equip">
+      <div class="equip-label">อุปกรณ์ที่ให้มา</div>
+      <div class="equip-list">
+        <div class="equip-item"><div class="equip-dot"></div> สายชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> หัวชาร์จ</div>
+        <div class="equip-item"><div class="equip-dot"></div> เคสใส</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="page-rental" class="page">
+<div class="img-page">
+  <div class="section-label">รายละเอียดการเช่า</div>
+  <!-- ← เปลี่ยน src เป็น URL รูปจริง -->
+  <div class="img-placeholder">
+    <div class="img-placeholder-icon">🖼️</div>
+    <div class="img-placeholder-text">วางรูปรายละเอียดการเช่าที่นี่</div>
+  </div>
+</div>
+</div>
+
+<div id="page-promo" class="page">
+<div class="img-page">
+  <div class="section-label">โปรโมชั่นประจำเดือน</div>
+  <!-- ← เปลี่ยน src เป็น URL รูปจริง -->
+  <div class="img-placeholder">
+    <div class="img-placeholder-icon">🎁</div>
+    <div class="img-placeholder-text">วางรูปโปรโมชั่นที่นี่</div>
+  </div>
+</div>
+</div>
 
 <div class="sticky-line">
   <a href="https://lin.ee/qr6XFNM" id="lineBtn" class="sticky-line-btn">
@@ -449,6 +588,43 @@ function render() {
 }
 
 loadAll();
+
+// ===== PAGE SWITCHING =====
+function switchPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const pg = document.getElementById('page-' + id);
+  if (pg) pg.classList.add('active');
+  if (el) el.classList.add('active');
+}
+
+// ===== DATE FILTER =====
+let activeDateFilter = 'all';
+
+function buildDateFilter() {
+  const wrap = document.getElementById('dateFilter');
+  if (!wrap) return;
+  const dates = [...new Set(
+    allData
+      .filter(e => activeMonth === 'all' || e.month === activeMonth)
+      .map(e => e.dateStr)
+  )].sort();
+  wrap.innerHTML = '<button class="date-chip active" data-date="all" onclick="filterDate('all',this)">ทั้งหมด</button>' +
+    dates.map(d => {
+      const [day, mon] = d.split('/');
+      const mth = ['','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'][parseInt(mon)];
+      return `<button class="date-chip" data-date="${d}" onclick="filterDate('${d}',this)">${day} ${mth}</button>`;
+    }).join('');
+  activeDateFilter = 'all';
+}
+
+function filterDate(date, el) {
+  document.querySelectorAll('#dateFilter .date-chip').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+  activeDateFilter = date;
+  render();
+}
+
 </script>
 </body>
 </html>

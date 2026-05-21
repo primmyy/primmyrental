@@ -440,7 +440,8 @@ async function loadAll() {
     buildDeviceFilter(devices);
     buildMonthTabs();
     updateStats();
-    buildDateFilter();
+    buildDateFilter();  // ต้องก่อน render เสมอ
+    activeDateFilter = "all"; // reset ให้แน่ใจ
     render();
     document.getElementById("lastUpdate").textContent = new Date().toLocaleDateString("th-TH", {day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
 
